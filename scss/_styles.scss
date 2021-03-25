@@ -160,20 +160,24 @@ header {
       li {
         @include media(">=980px") {
           padding-left: 26px;
+          color: $headerLinks;
           &:first-child {
             padding-left: 0;
           }
-        }
-      }
-      a {
-        text-decoration: none;
-        @include font-style(15px, $linksHover);
-        @include media(">=980px") {
-          color: $headerLinks;
           &:hover {
             color: $linksHover;
             transition: 0.5s;
           }
+        }
+        a {
+          text-decoration: none;
+          @include font-style(15px, inherit);
+        }
+      }
+      li.active {
+        @include media(">=980px") {
+          color: $linksHover;
+          transition: 0.5s;
         }
       }
     }
