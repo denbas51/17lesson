@@ -158,9 +158,10 @@ header {
         width: 100%;
       }
       li {
+        color: $headerLinks;
         @include media(">=980px") {
           padding-left: 26px;
-          color: $headerLinks;
+
           &:first-child {
             padding-left: 0;
           }
