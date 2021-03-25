@@ -1,0 +1,31 @@
+@mixin font-style($fSize, $Fcolor) {
+  font-weight: normal;
+  font-family: "Montserrat", sans-serif;
+  font-size: $fSize;
+  color: $Fcolor;
+}
+@mixin h2-style($h2Size, $h2l-height, $h2margin-t, $h2margin-b) {
+  font-size: $h2Size;
+  line-height: $h2l-height;
+  font-weight: 600;
+  margin-top: $h2margin-t;
+  margin-bottom: $h2margin-b;
+}
+@mixin angle-right($angle-width, $angle-height, $angle-top, $angle-right) {
+  width: $angle-width;
+  height: $angle-height;
+  top: $angle-top;
+  right: $angle-right;
+}
+@mixin flex-arg($display, $f-direction, $jc, $ai) {
+  display: $display;
+  flex-direction: $f-direction;
+  justify-content: $jc;
+  align-items: $ai;
+}
+@mixin just-text-style($fSize, $padding-l, $bWidth, $bHeight) {
+  font-size: $fSize;
+  padding-left: $padding-l;
+  width: $bWidth;
+  height: $bHeight;
+}
