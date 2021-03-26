@@ -158,9 +158,10 @@ header {
         width: 100%;
       }
       & > li {
-        color: $headerLinks;
+        color: $linksHover;
         position: relative;
         @include media(">=980px") {
+          color: $headerLinks;
           padding-left: 26px;
           height: 97px;
           display: flex;
