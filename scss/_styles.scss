@@ -136,7 +136,7 @@ header {
         }
       }
     }
-    ul {
+    & > ul {
       @include flex-arg(flex, column, space-evenly, center);
       position: fixed;
       top: 0;
@@ -157,11 +157,14 @@ header {
         background: none;
         width: 100%;
       }
-      li {
+      & > li {
         color: $headerLinks;
+        position: relative;
         @include media(">=980px") {
           padding-left: 26px;
-
+          height: 97px;
+          display: flex;
+          align-items: center;
           &:first-child {
             padding-left: 0;
           }
@@ -173,6 +176,20 @@ header {
         a {
           text-decoration: none;
           @include font-style(15px, inherit);
+        }
+        ul {
+          position: absolute;
+          left: -30px;
+          top: 0;
+          background: green;
+          display: none;
+        }
+        &:hover {
+          ul {
+            @include flex-arg(flex, column, space-evenly, center);
+            height: 419px;
+            width: 162px;
+          }
         }
       }
       li.active {
