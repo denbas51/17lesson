@@ -157,17 +157,18 @@ header {
         background: none;
         width: 100%;
       }
+
       & > li {
         color: $linksHover;
         position: relative;
         @include media(">=980px") {
           color: $headerLinks;
-          padding-left: 26px;
+          margin-left: 26px;
           height: 97px;
           display: flex;
           align-items: center;
           &:first-child {
-            padding-left: 0;
+            margin-left: 0;
           }
           &:hover {
             color: $linksHover;
@@ -179,17 +180,91 @@ header {
           @include font-style(15px, inherit);
         }
         ul {
-          position: absolute;
-          left: -30px;
-          top: 0;
-          background: green;
           display: none;
         }
         &:hover {
-          ul {
-            @include flex-arg(flex, column, space-evenly, center);
-            height: 419px;
-            width: 162px;
+          @include media(">=980px") {
+            & > ul {
+              @include flex-arg(flex, column, space-evenly, center);
+              position: absolute;
+              left: calc(50% - 81px);
+              top: 100%;
+              background: #df4f57;
+              height: 419px;
+              width: 162px;
+              z-index: 10;
+              &::before {
+                position: absolute;
+                content: "";
+                top: -5px;
+                left: calc(50% - 4.5px);
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 4.5px 5px 4.5px;
+                border-color: transparent transparent #df4f56 transparent;
+              }
+              & > li {
+                color: $headerLinks;
+                position: relative;
+                width: 100%;
+                text-align: center;
+                a {
+                  font: 14px "Open Sans", sans-serif;
+                }
+                &:hover {
+                  color: $linksHover;
+                  transition: 0.5s;
+                  div {
+                    position: absolute;
+                    left: 100%;
+                    top: -10px;
+                    padding-left: 10px;
+                  }
+                  div > ul {
+                    @include flex-arg(flex, column, flex-start, normal);
+                    background: #df4f57;
+                    height: 146px;
+                    width: 149px;
+                    z-index: 10;
+                    position: relative;
+                    & > li {
+                      color: $headerLinks;
+                      margin-top: 12px;
+                      margin-left: 15px;
+                      text-align: left;
+                      &:hover {
+                        color: $linksHover;
+                        transition: 0.5s;
+                      }
+                    }
+                    &::before {
+                      position: absolute;
+                      content: "";
+                      top: 17px;
+                      left: -5px;
+                      width: 0;
+                      height: 0;
+                      border-style: solid;
+                      border-width: 4.5px 5px 4.5px 0;
+                      border-color: transparent #df4f56 transparent transparent;
+                    }
+                    li.active {
+                      @include media(">=980px") {
+                        color: $linksHover;
+                        transition: 0.5s;
+                      }
+                    }
+                  }
+                }
+              }
+              li.active {
+                @include media(">=980px") {
+                  color: $linksHover;
+                  transition: 0.5s;
+                }
+              }
+            }
           }
         }
       }
@@ -263,7 +338,7 @@ main {
           @include angle-right(18px, 22px, 10px, -345px);
         }
       }
-      @include font-style(11px, #ebebeb);
+      @include font-style(11px, #a5d3dd);
       text-decoration: none;
       @include media(">=640px") {
         font-size: 22px;
