@@ -15,7 +15,7 @@ header {
 }
 .top-header {
   position: relative;
-  background: green;
+  background: #373c3f;
   @include flex-arg(flex, row, space-between, center);
   height: 37px;
   @include media(">=640px") {
